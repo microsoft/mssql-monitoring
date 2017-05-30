@@ -31,6 +31,23 @@ For sizing InfluxDB, refer to their [documentation](https://docs.influxdata.com/
   sudo bash ./run.sh
   ```
   
+# Setting up collectd on your Microsoft SQL Server on Linux machine
+
+- Install Docker Engine
+  ```
+  wget -qO- https://get.docker.com/ | sudo sh
+  ```
+- Clone this repository
+  ```
+  git clone https://github.com/scschneider/sqlserver-perf-monitoring.git
+  ```
+- Browse to ./sqlserver-perf-monitoring/collectd
+- Edit run.sh and change the variables to match your environment
+- Run run.sh to pull down the InfluxDB image create the container
+  ```
+  sudo bash ./run.sh
+  ```
+
 # Setting up Grafana
 
 If you are doing a small (monitoring a few machines) scale setup, you should be fine running this on the same host as your InfluxDB container. We use the image created by [Grafana Labs](http://docs.grafana.org/installation/docker/) and we just added a run.sh file that you can use to run the container.
@@ -58,19 +75,3 @@ If you are doing a small (monitoring a few machines) scale setup, you should be 
 - Browse back to the main page and import the dashboards from the dashboard dropdown menu.
   Dashboards are located under ./sqlserver_perf_monitoring/grafana_dashboard_templates
   
-# Setting up collectd on your Microsoft SQL Server on Linux machine
-
-- Install Docker Engine
-  ```
-  wget -qO- https://get.docker.com/ | sudo sh
-  ```
-- Clone this repository
-  ```
-  git clone https://github.com/scschneider/sqlserver-perf-monitoring.git
-  ```
-- Browse to ./sqlserver-perf-monitoring/collectd
-- Edit run.sh and change the variables to match your environment
-- Run run.sh to pull down the InfluxDB image create the container
-  ```
-  sudo bash ./run.sh
-  ```
