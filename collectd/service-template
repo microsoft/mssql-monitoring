@@ -1,0 +1,12 @@
+[Unit]
+Description=Docker Container %I
+Requires=docker.service
+After=docker.service
+
+[Service]
+Restart=always
+ExecStart=/usr/bin/docker start -a %i
+ExecStop=/usr/bin/docker stop -t 2 %i
+
+[Install]
+WantedBy=default.target

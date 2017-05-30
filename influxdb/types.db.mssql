@@ -1,0 +1,2 @@
+sql_server_perf_stats	perf_stats_value:GAUGE:0:U
+sql_server_wait_stats	wait_time_ms:DERIVE:0:U, waiting_tasks_count:DERIVE:0:U, max_wait_time_ms:GAUGE:0:U
