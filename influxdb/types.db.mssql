@@ -1,2 +1,3 @@
 sql_server_perf_stats	perf_stats_value:GAUGE:0:U
 sql_server_wait_stats	wait_time_ms:DERIVE:0:U, waiting_tasks_count:DERIVE:0:U, max_wait_time_ms:GAUGE:0:U
+sql_server_hadr_stats	log_send_queue_size:GAUGE:0:U, log_send_rate:GAUGE:0:U, redo_queue_size:GAUGE:0:U, redo_rate:DERIVE:0:U, filestream_send_rate:GAUGE:0:U, secondary_lag_seconds:GAUGE:0:U
