@@ -9,8 +9,9 @@ There are a few things that you will need bofore you can implement this monitori
 - Access to docker.io and Github for pulling Docker images and this repository.
 - A SQL machine or VM that you would like to monitor.
 - 1-2 machines for running InfluxDB and Grafana, depending on how large your deployment is.
-- InfluxDB uses ports 25826 (for inbound metric data) and 8086 (for outbound queries from Grafana)
-- Grafana will use 3000 by default and will need to be opened for inbound connections.
+- InfluxDB opened ports: 25826 (inbound data to InfluxDB), 8086 (outbound queries from Grafana)
+- Grafana opened port: 3000 (default web port for inbound connections)
+
 
 # Setting up InfluxDb.
 
@@ -22,16 +23,16 @@ For sizing InfluxDB, refer to their [documentation](https://docs.influxdata.com/
   ```
 - Clone this repository
   ```
-  git clone https://github.com/scschneider/sqlserver-perf-monitoring.git
+  git clone https://github.com/Microsoft/mssql-monitoring.git
   ```
-- Browse to ./sqlserver-perf-monitoring/influxdb
+- Browse to ./mssql-monitoring/influxdb
 - Edit run.sh and change the variables to match your environment
-- Run run.sh to pull down the InfluxDB image create the container
+- Run run.sh. This will pull down the InfluxDB image and create and run the container
   ```
   sudo bash ./run.sh
   ```
   
-# Setting up collectd on your Microsoft SQL Server on Linux machine
+# Setting up collectd on the Linux SQL Server you want to monitor
 
 - Install Docker Engine
   ```
@@ -39,11 +40,11 @@ For sizing InfluxDB, refer to their [documentation](https://docs.influxdata.com/
   ```
 - Clone this repository
   ```
-  git clone https://github.com/scschneider/sqlserver-perf-monitoring.git
+  git clone https://github.com/Microsoft/mssql-monitoring.git
   ```
-- Browse to ./sqlserver-perf-monitoring/collectd
+- Browse to ./mssql-monitoring/collectd
 - Edit run.sh and change the variables to match your environment
-- Run run.sh to pull down the InfluxDB image create the container
+- Run run.sh. This will pull down the collectd image, set it to start on reboot and create and run the container.
   ```
   sudo bash ./run.sh
   ```
@@ -58,10 +59,10 @@ If you are doing a small (monitoring a few machines) scale setup, you should be 
   ```
 - If you are running this separately, you will need to clone this repository
   ```
-  git clone https://github.com/scschneider/sqlserver-perf-monitoring.git
+  git clone https://github.com/Microsoft/mssql-monitoring.git
   ```
-- Browse to ./sqlserver-perf-monitoring/grafana
-- Run run.sh to pull down the Grafana image create the container
+- Browse to ./mssql-monitoring/grafana
+- Run run.sh. This will pull down the Grafana image and create and run the container
   ```
   sudo bash ./run.sh
   ```
@@ -73,5 +74,5 @@ If you are doing a small (monitoring a few machines) scale setup, you should be 
   * Database: collectd_db
 - Click Add
 - Browse back to the main page and import the dashboards from the dashboard dropdown menu.
-  Dashboards are located under ./sqlserver_perf_monitoring/grafana_dashboard_templates
+  Dashboards are located under [./sqlserver_perf_monitoring/grafana_dashboard_templates](https://github.com/Microsoft/mssql-monitoring/tree/master/grafana_dashboard_templates) in the GitHub repo.
   
