@@ -1,6 +1,6 @@
 # What is this project?
 
-This is a project to get users started on monitoring Microsoft SQL Server on Linux using [collectd](https://collectd.org/), [InfluxDB](https://www.influxdata.com/) and [Grafana](https://grafana.com/).
+This is a project to get users started on monitoring Microsoft SQL Server on Linux using [collectd](https://collectd.org/), [InfluxDB](https://www.influxdata.com/) and [Grafana](https://grafana.com/). Please see [How the SQLCAT Customer Lab is Monitoring SQL on Linux](https://blogs.msdn.microsoft.com/sqlcat/2017/07/03/how-the-sqlcat-customer-lab-is-monitoring-sql-on-linux/) for more details on the project.
 
 # What do I need?
 
