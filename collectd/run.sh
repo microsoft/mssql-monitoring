@@ -10,10 +10,10 @@ INFLUX_DB_PORT="25826"
 SQL_HOSTNAME="MyHostName"
 
 #The username used to connect to SQL Server.
-SQL_USERNAME="sa"
+SQL_USERNAME="sqluser"
 
 #The password of the account used to connect to SQL Server
-SQL_PASSWORD="sa_password"
+SQL_PASSWORD="strongsqlpassword"
 
 #The interval that you would like metrics to be pulld from your SQL Server
 SQL_POLL_INTERVAL="5"
