@@ -4,8 +4,8 @@ MAINTAINER Steven Schneider <stschn@microsoft.com>
 RUN apt-get update &&\
     apt-get -y upgrade
 
-RUN curl -O https://dl.influxdata.com/influxdb/releases/influxdb_1.2.2_amd64.deb
-RUN dpkg -i influxdb_1.2.2_amd64.deb
+RUN https://dl.influxdata.com/influxdb/releases/influxdb_1.3.6_amd64.deb
+RUN dpkg -i influxdb_1.3.6_amd64.deb
 
 RUN mkdir -p /opt/collectd/share/collectd
 RUN curl -o /opt/collectd/share/collectd/types.db https://raw.githubusercontent.com/collectd/collectd/master/src/types.db
